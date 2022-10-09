@@ -1,0 +1,30 @@
+.bottom-composition {
+    .left-side {
+        position: absolute;
+        bottom: -5px;
+        left: 15px;
+    }
+
+    .center {
+        .town, .sun {
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .town {
+            opacity: 0.8;
+        }
+
+        .sun {
+            z-index: -1;
+        }
+    }
+
+    .right-side {
+        position: absolute;
+        bottom: -5px;
+        right: 15px;
+    }
+}

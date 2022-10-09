@@ -1,0 +1,16 @@
+.logo-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 10px;
+
+    .logo--text {
+        font-family: "Fredoka";
+        font-size: 3em;
+        
+        color: $dark-blue;
+
+        user-select: none; 
+    }
+}
