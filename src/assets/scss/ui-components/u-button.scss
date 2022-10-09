@@ -1,0 +1,30 @@
+.u-button {
+    user-select: none;
+
+    font-family: "Fredoka";
+    font-size: 3.5em;
+    color: $turquoise;
+
+    text-align: center;
+
+    background-color: $dark-blue;
+
+    padding: 20px 10px;
+    margin-bottom: 15px;
+    width: 450px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease-in, color 0.2s ease-in, opacity 0.1s ease-out;
+
+    &:hover {
+        background-color: $turquoise;
+        color: $dark-blue;
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+}
