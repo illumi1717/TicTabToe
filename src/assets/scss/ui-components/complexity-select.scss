@@ -1,0 +1,37 @@
+.complexity-select-block {
+    margin-top: 35px;
+    user-select: none;
+
+    .complexity-select {
+        width: 350px;
+    
+        font-size: 1.8em;
+        font-family: "Fredoka";
+        color: $turquoise;
+        
+        background-color: rgba($color: $turquoise, $alpha: .34);
+        
+        border: 3px solid $turquoise;
+    
+        margin-top: 5px;
+    
+        &:focus {
+            border: 3px solid $turquoise;
+            outline: none; 
+        }
+    
+        &:active {
+            border: 3px solid $turquoise;
+        }
+    
+        option {
+            color: $dark-blue;
+            background-color: rgba($color: $turquoise, $alpha: .1);
+        }
+    }
+    
+    .complexity-select--text {
+        font-size: 1.8em;
+        text-align: center;
+    }
+}

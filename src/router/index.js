@@ -6,6 +6,12 @@ const routes = [
     name: 'main',
     meta: {layout: 'main-layout'},
     component: () => import('@/views/MainView.vue')
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    meta: {layout: 'main-layout'},
+    component: () => import('@/views/SettingsView.vue')
   }
 ]
 

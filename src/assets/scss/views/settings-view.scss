@@ -1,0 +1,47 @@
+.settings-view {
+    .settings-form {
+        position: fixed;
+
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        
+        background-color: $dark-blue;
+        width: 450px;
+        height: 450px;
+        
+        color: $turquoise;
+        font-family: "Fredoka";
+
+        border-radius: 44px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .field-size-block { 
+            width: 350px;
+
+            text-align: center;
+            font-size: 1.8em;
+            user-select: none;
+
+            margin-top: 10px;
+
+            .row-slider {
+                margin: 10px 0;
+            }
+
+            .field-size--data {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .separator {
+                    font-size: 19px;
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+}

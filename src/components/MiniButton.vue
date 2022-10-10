@@ -1,11 +1,11 @@
 <template>
-    <div class="u-button">
+    <div class="mini-button">
         <slot></slot>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'u-button'
+        name: 'mini-button'
     }
 </script>

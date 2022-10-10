@@ -1,0 +1,30 @@
+.mini-button {
+    user-select: none;
+
+    font-family: "Fredoka";
+    font-size: 2em;
+    text-align: center;
+    color: $dark-blue;
+
+    background-color: $turquoise;
+
+    width: calc(100% - 70px);
+    padding: 10px 10px;
+
+    border-radius: 15px;
+
+    position: fixed;
+    bottom: 15px;
+
+    cursor: pointer;
+
+    transition: opacity 0.1s ease-in;
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &:active {
+        transform: scale(.95);
+    }
+}

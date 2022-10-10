@@ -1,20 +1,17 @@
 <template>
     <div class="main-view">
-        <div class="menu">
-            <u-button>Start</u-button>
-            <u-button>Settings</u-button>
-        </div>
+        <u-menu />
     </div>
 </template>
 
 <script>
-    import UButton from "@/components/UButton"
+    import UMenu from '@/components/UMenu';
 
     export default {
         name: 'main-view',
-        
+
         components: {
-            UButton
+            UMenu
         }
     }
 </script>
