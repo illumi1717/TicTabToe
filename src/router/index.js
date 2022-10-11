@@ -12,6 +12,12 @@ const routes = [
     name: 'settings',
     meta: {layout: 'main-layout'},
     component: () => import('@/views/SettingsView.vue')
+  },
+  {
+    path: '/box',
+    name: 'box',
+    meta: {layout: 'empty-layout'},
+    component: () => import('@/views/BoxView.vue')
   }
 ]
 

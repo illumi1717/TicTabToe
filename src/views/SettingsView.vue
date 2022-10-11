@@ -12,8 +12,8 @@
                     sticky="true"
                     step="5"
 
-                    :min="20"
-                    :max="100"
+                    :min="130"
+                    :max="250"
 
                     class="row-slider"
                 />
@@ -25,7 +25,7 @@
             </div>
 
             <div class="complexity-block">
-                <complexity-select />
+                <complexity-select v-model="complexity"/>
             </div>
 
             <mini-button @click="$router.push('/')">Menu</mini-button>
@@ -42,11 +42,22 @@
         name: 'settings-view',
 
         data: () => ({
-            fieldSize: 50
+            fieldSize: window.localStorage.getItem('fieldSize') ?? 200,
+            complexity: window.localStorage.getItem('complexity') ?? 'middle'
         }),
 
+        watch: {
+            fieldSize() {
+                window.localStorage.setItem('fieldSize', this.fieldSize);
+            },
+
+            complexity() {
+                window.localStorage.setItem('complexity', this.complexity);
+            }
+        },
+
         components: {
-            "row-slider": Slider,
+            'row-slider': Slider,
             ComplexitySelect,
             MiniButton
         }        

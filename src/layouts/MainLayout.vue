@@ -12,14 +12,14 @@
 
         <div class="bottom-composition">
             <div class="left-side">
-                <img src="@/assets/images/left-palm.svg" width="300">
+                <!-- <img src="@/assets/images/left-palm.svg" width="300"> -->
             </div>
             <div class="center">
-                <img class="town" src="@/assets/images/town.svg" width="325">
+                <img class="town" src="@/assets/images/town.svg" width="100%" height="300">
                 <img class="sun" src="@/assets/images/sun.svg" width="500">
             </div>
             <div class="right-side">
-                <img src="@/assets/images/right-palm.svg" width="300">
+                <!-- <img src="@/assets/images/right-palm.svg" width="300"> -->
             </div>
         </div>
     </div>

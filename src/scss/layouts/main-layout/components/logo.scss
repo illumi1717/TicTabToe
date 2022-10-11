@@ -1,4 +1,5 @@
 .logo-block {
+    user-select: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +9,7 @@
     .logo--text {
         font-family: "Fredoka";
         font-size: 3em;
-        
+
         color: $dark-blue;
 
         user-select: none; 

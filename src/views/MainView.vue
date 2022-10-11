@@ -12,6 +12,6 @@
 
         components: {
             UMenu
-        }
+        },
     }
 </script>

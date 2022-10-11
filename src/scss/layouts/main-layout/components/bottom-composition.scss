@@ -1,8 +1,11 @@
 .bottom-composition {
+    user-select: none;
+
     .left-side {
         position: absolute;
         bottom: -5px;
         left: 15px;
+        z-index: 1;
     }
 
     .center {
@@ -14,11 +17,13 @@
         }
 
         .town {
-            opacity: 0.8;
+            opacity: 0.75;
+            bottom: -60px;
+            z-index: -1;
         }
 
         .sun {
-            z-index: -1;
+            z-index: -2;
         }
     }
 
