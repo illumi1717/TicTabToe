@@ -18,6 +18,12 @@ const routes = [
     name: 'box',
     meta: {layout: 'empty-layout'},
     component: () => import('@/views/BoxView.vue')
+  },
+  {
+    path: '/game-window-menu',
+    name: 'game-window-menu',
+    meta: {layout: 'empty-layout'},
+    component: () => import('@/views/GameMenuView.vue')
   }
 ]
 

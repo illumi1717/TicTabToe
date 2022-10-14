@@ -1,8 +1,8 @@
-.complexity-select-block {
+.mode-select-block {
     margin-top: 35px;
     user-select: none;
 
-    .complexity-select {
+    .mode-select {
         cursor: pointer;
 
         width: 350px;
@@ -32,7 +32,7 @@
         }
     }
     
-    .complexity-select--text {
+    .mode-select--text {
         font-size: 1.8em;
         text-align: center;
     }

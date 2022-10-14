@@ -24,8 +24,8 @@
                 </div>
             </div>
 
-            <div class="complexity-block">
-                <complexity-select v-model="complexity"/>
+            <div class="mode-block">
+                <mode-select v-model="mode"/>
             </div>
 
             <mini-button @click="$router.push('/')">Menu</mini-button>
@@ -35,15 +35,15 @@
 
 <script>
     import Slider from 'vue3-slider';
-    import ComplexitySelect from '@/components/ComplexitySelect.vue';
-    import MiniButton from '@/components/MiniButton.vue';
+    import ModeSelect from '@/components/ModeSelect';
+    import MiniButton from '@/components/MiniButton';
     
     export default {
         name: 'settings-view',
 
         data: () => ({
             fieldSize: window.localStorage.getItem('fieldSize') ?? 200,
-            complexity: window.localStorage.getItem('complexity') ?? 'middle'
+            mode: window.localStorage.getItem('mode') ?? 'single'
         }),
 
         watch: {
@@ -51,14 +51,14 @@
                 window.localStorage.setItem('fieldSize', this.fieldSize);
             },
 
-            complexity() {
-                window.localStorage.setItem('complexity', this.complexity);
+            mode() {
+                window.localStorage.setItem('mode', this.mode);
             }
         },
 
         components: {
             'row-slider': Slider,
-            ComplexitySelect,
+            ModeSelect,
             MiniButton
         }        
     }

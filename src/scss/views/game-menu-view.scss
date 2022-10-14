@@ -1,0 +1,44 @@
+.game-menu-view {
+    .score--wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .score-container {
+        font-family: 'Fredoka';
+        display: flex;
+        justify-content: space-between;
+        width: 150px;
+        
+        .score-block {
+            text-align: center;
+
+            .score-field {
+                font-size: 3em;
+                font-weight: bold;
+            }
+
+            .player-field {
+                font-size: 0.8em;
+            }
+        }
+    }
+    
+    .menu-container {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .u-button {
+                font-size: 1em;
+                padding: 10px 5px;
+                margin-bottom: 3px;
+                width: calc(100% - 20px);
+                border-radius: 10px;
+            }
+        }
+    }
+}

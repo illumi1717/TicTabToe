@@ -5,29 +5,63 @@
 </template>
 
 <script>
-    import JSONBroadcastChannelService from '@/service/JSONBroadcastChannelService';
-
     export default {
         name: 'box-view',
         
         data() {
             return {
-                state: ''
+                state: '',
+                currentPlayer: 'X',
+                boxId: window.name.split('-')[1]
+            }
+        },
+
+        methods: {
+            changeCurrentPlayerListener() {
+                new BroadcastChannel('game').onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    if (data.type === 'update-field-state') {
+                        console.log(data)
+                        if (data.state === 'X') {
+                            this.currentPlayer = 'O';
+                        } else {
+                            this.currentPlayer = 'X';
+                        }
+                    }
+                };
+            },
+
+            clearStateListener() {
+                new BroadcastChannel('game').onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+                    if (data.type === 'restart-game') {
+                        console.log(data)
+                        this.currentPlayer = 'X';
+                        this.state = '';
+                    }
+                }
+            },
+
+            changeStateListener() {
+                const broadcast = new BroadcastChannel('game');
+                window.addEventListener('click', () => {
+                    if (!this.state) {
+                        this.state = this.currentPlayer;
+                        broadcast.postMessage(JSON.stringify({
+                            type: 'update-field-state',
+                            rowId: this.boxId[0],
+                            colId: this.boxId[1],
+                            state: this.state
+                        }));
+                    }
+                });
             }
         },
 
         mounted() {
-            const gameBroadcast = new JSONBroadcastChannelService('game');
-
-            window.addEventListener('click', () => {
-                if (!this.state) {
-                    this.state = 'X';
-                    gameBroadcast.sendJSONMessage({
-                        boxId: this.$route.query.id,
-                        state: 'X'
-                    });
-                }
-            });
+            this.changeStateListener();
+            this.changeCurrentPlayerListener();
+            this.clearStateListener();
         }
     }
 </script>

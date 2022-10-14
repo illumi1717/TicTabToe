@@ -1,23 +1,22 @@
 <template>
-    <div class="complexity-select-block">
-        <div class="complexity-select--text">Complexity</div>
+    <div class="mode-select-block">
+        <div class="mode-select--text">Mode</div>
         <select 
-            class="complexity-select" 
-            name="complexity"
+            class="mode-select" 
+            name="mode"
             
             :value="modelValue"
             @change="$emit('update:modelValue', $event.target.value)"
         >
-            <option value="easy">Easy</option>
-            <option value="middle">Middle</option>
-            <option value="hard">Hard</option>
+            <option value="single">Singleplayer</option>
+            <option value="multi">Multiplayer</option>
         </select>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'complexity-select',
+        name: 'mode-select',
 
         props: {
             modelValue: {
