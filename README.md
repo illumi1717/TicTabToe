@@ -18,4 +18,4 @@ The application has two game modes.
 - The first one is **singleplayer**. Here the player plays with the computer. The computer game is implemented using the `tictactoe-ai` library, which is based on the Minimax algorithm. 
 - **Multiplayer** involves two players playing on the same computer. When you click, the sign automatically changes depending on whose turn it is now.
 
-__Sorry for my English, translated in a translator__
+_Sorry for my English, translated in a translator_
