@@ -27,10 +27,10 @@
                 listeners.push(GameListenersService.updateFieldListener(
                     GameFieldModel
                 ));
-                listeners.push(GameListenersService.drawDeterminationListener(
+                listeners.push(GameListenersService.winnerDeterminationListener(
                     GameFieldModel
                 ));
-                listeners.push(GameListenersService.winnerDeterminationListener(
+                listeners.push(GameListenersService.drawDeterminationListener(
                     GameFieldModel
                 ));
                 listeners.push(GameListenersService.restartGameListener(
