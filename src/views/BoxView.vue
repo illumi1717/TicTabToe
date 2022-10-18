@@ -21,7 +21,6 @@
                 new BroadcastChannel('game').onmessage = (event) => {
                     const data = JSON.parse(event.data);
                     if (data.type === 'update-field-state') {
-                        console.log(data)
                         if (data.state === 'X') {
                             this.currentPlayer = 'O';
                         } else {
@@ -35,9 +34,20 @@
                 new BroadcastChannel('game').onmessage = (event) => {
                     const data = JSON.parse(event.data);
                     if (data.type === 'restart-game') {
-                        console.log(data)
                         this.currentPlayer = 'X';
                         this.state = '';
+                    }
+                }
+            },
+
+            updateStateByBroadcastChannelListener() {
+                new BroadcastChannel('game').onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+
+                    if (data.type === 'update-field-state') {
+                        if (!this.state && this.boxId === `${data.rowId}${data.colId}`) {
+                            this.state = data.state;
+                        }
                     }
                 }
             },
@@ -55,13 +65,24 @@
                         }));
                     }
                 });
+            },
+
+            stopGameIfCloseWindow() {
+                window.addEventListener("beforeunload", () => {
+                    const broadcast = new BroadcastChannel('game');
+                    broadcast.postMessage(JSON.stringify({
+                        type: 'stop-game'
+                    }));
+                });
             }
         },
 
         mounted() {
             this.changeStateListener();
+            this.updateStateByBroadcastChannelListener();
             this.changeCurrentPlayerListener();
             this.clearStateListener();
+            this.stopGameIfCloseWindow();
         }
     }
 </script>

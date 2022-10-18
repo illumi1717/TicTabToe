@@ -28,4 +28,16 @@ export default class GameFieldCheckerService {
 
         return winner;
     }
+
+    static getFreeBoxes(field) {
+        const freeBoxes = [];
+        field.forEach((row, rid) => {
+            row.forEach((box, cil) => {
+                if (box === '') {
+                    freeBoxes.push([rid, cil]);
+                }
+            })
+        });
+        return freeBoxes;
+    }
 }

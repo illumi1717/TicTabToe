@@ -21,6 +21,10 @@ class GameField {
         return this.fieldWindows;
     }
 
+    getMatrixField() {
+        return this.field;
+    }
+
     getRows() {
         return this.field;
     }

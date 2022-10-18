@@ -22,24 +22,31 @@
 
         methods: {
             addMultiplayerListeners() {
-                const updateFieldListenerObject = GameListenersService.updateFieldListener(
+                let listeners = [];
+
+                listeners.push(GameListenersService.updateFieldListener(
                     GameFieldModel
-                );
-                const winnerDeterminationListenerObject = GameListenersService.winnerDeterminationListener(
+                ));
+                listeners.push(GameListenersService.drawDeterminationListener(
                     GameFieldModel
-                );
-                const restartGameListenerObject = GameListenersService.restartGameListener(
+                ));
+                listeners.push(GameListenersService.winnerDeterminationListener(
                     GameFieldModel
-                );
-                const stopGameListenerObject = GameListenersService.stopGameListener(
+                ));
+                listeners.push(GameListenersService.restartGameListener(
                     GameFieldModel
-                );
-                GameListenersService.closeGameListenersListener([
-                    updateFieldListenerObject,
-                    winnerDeterminationListenerObject,
-                    restartGameListenerObject,
-                    stopGameListenerObject
-                ]);
+                ));
+                listeners.push(GameListenersService.stopGameListener(
+                    GameFieldModel
+                ));
+
+                if (localStorage.getItem('mode') === 'single') {
+                    listeners.push(GameListenersService.botMoveListener(
+                        GameFieldModel
+                    ));
+                }
+
+                GameListenersService.closeGameListenersListener(listeners);
             },
 
             createField() {
